@@ -27,12 +27,12 @@ public class Hook : MonoBehaviour
         {
             nowTime = 0;
         }
-        nowTime += Time.deltaTime;
-        nowDegree = Mathf.Cos(nowTime)* rotateMaxDegree;
+        nowTime += Time.fixedDeltaTime;
+        nowDegree = Mathf.Cos(nowTime * Mathf.PI * 2 / rotateTime) * rotateMaxDegree;
         var rotateVector = new Vector2(Mathf.Sin((nowDegree + 180f) * Mathf.Deg2Rad), Mathf.Cos((nowDegree + 180f) * Mathf.Deg2Rad));
         LookAt2DTool.LookAt2DWithDirection(transform, rotateVector, -90);
     }
-    private void Update()
+    private void FixedUpdate()
     {
         HookRotate();
     }
