@@ -6,7 +6,7 @@ using UnityEngine;
 public class Miner : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    [Label("矿车角速度")] public float minerSpeed;
+    [Label("矿车速度")] public float minerSpeed;
     public Planet planet;
     public float degreeOnPlanet=0;
     public float height;
@@ -36,10 +36,10 @@ public class Miner : MonoBehaviour
     }
     public void CarMove()
     {
-        //Vector2 newPos = (Vector2)transform.position + new Vector2(InputManager.Instance.miner.controlDir, 0);
+        Vector2 newPos = (Vector2)transform.position + new Vector2(InputManager.Instance.miner.controlDir, 0)*minerSpeed*Time.deltaTime;
         //Vector2 newPos = (Vector2)transform.position+planet.ChangeDegreeToPos(InputManager.Instance.miner.controlDir);
-        degreeOnPlanet += InputManager.Instance.miner.controlDir* minerSpeed;
-        Vector2 newPos = planet.ChangeDegreeToPos(degreeOnPlanet,height+ jumpHeight);
+        //degreeOnPlanet += InputManager.Instance.miner.controlDir* minerSpeed;
+        //Vector2 newPos = planet.ChangeDegreeToPos(degreeOnPlanet,height+ jumpHeight);
         rb2d.MovePosition(newPos);
         //Debug.Log($"真的在动,{newPos}");
     }
@@ -112,7 +112,16 @@ public class Miner : MonoBehaviour
     {
         CarMove();
         //FetchToPlanet();
-        JumpHandle();
-        KeepDirToPlanet();
+        //JumpHandle();
+        //KeepDirToPlanet();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        EnemyBase tmp;
+        if (collision.gameObject.TryGetComponent<EnemyBase>(out tmp))
+        {
+            rb2d.velocity = Vector2.zero;
+            tmp.HitBack();
+        }
     }
 }
