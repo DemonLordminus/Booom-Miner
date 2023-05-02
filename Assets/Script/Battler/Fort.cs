@@ -17,6 +17,9 @@ public class Fort : MonoBehaviour
     public Transform bulletFather;
     public float bullerFireTime;
     private float nowFireTime;
+    public float bulletDamage;
+    public float bulletForce;
+    public bool isBulletCanGetOverEnemy;
     private void HandleFortRotate()
     {
         var nowVector = new Vector2(Mathf.Sin(nowDegree * Mathf.Deg2Rad), Mathf.Cos(nowDegree * Mathf.Deg2Rad));
@@ -56,6 +59,9 @@ public class Fort : MonoBehaviour
         var newBullet = Instantiate(bulletPrefab, bulletFather).GetComponent<Bullet>();
         newBullet.transform.position=transform.position;
         newBullet.Fire(LookAt2DTool.GetFaceDirection(transform, 90), bulletSpeed);
+        newBullet.damage = bulletDamage;
+        newBullet.bulletForce = bulletForce;
+        newBullet.isCanGetOverEnemy = isBulletCanGetOverEnemy;
     }
     private void FireLoop()
     {
