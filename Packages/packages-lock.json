@@ -14,7 +14,7 @@
       "dependencies": {}
     },
     "com.unity.2d.animation": {
-      "version": "9.0.1",
+      "version": "9.0.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -64,7 +64,7 @@
       "dependencies": {}
     },
     "com.unity.2d.spriteshape": {
-      "version": "9.0.1",
+      "version": "9.0.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -84,7 +84,7 @@
       }
     },
     "com.unity.2d.tilemap.extras": {
-      "version": "3.0.3",
+      "version": "3.1.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -96,7 +96,7 @@
       "url": "https://packages.unity.cn"
     },
     "com.unity.burst": {
-      "version": "1.8.3",
+      "version": "1.8.4",
       "depth": 3,
       "source": "registry",
       "dependencies": {
@@ -142,13 +142,13 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.2d.animation": "9.0.1",
+        "com.unity.2d.animation": "9.0.2",
         "com.unity.2d.pixel-perfect": "5.0.3",
         "com.unity.2d.psdimporter": "8.0.2",
         "com.unity.2d.sprite": "1.0.0",
-        "com.unity.2d.spriteshape": "9.0.1",
+        "com.unity.2d.spriteshape": "9.0.2",
         "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.2d.tilemap.extras": "3.0.3"
+        "com.unity.2d.tilemap.extras": "3.1.0"
       }
     },
     "com.unity.feature.cinematic": {
@@ -156,7 +156,7 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.timeline": "1.7.3",
+        "com.unity.timeline": "1.7.4",
         "com.unity.sequences": "2.0.1",
         "com.unity.formats.fbx": "4.2.1",
         "com.unity.formats.alembic": "2.3.0",
@@ -268,8 +268,8 @@
       "url": "https://packages.unity.cn"
     },
     "com.unity.timeline": {
-      "version": "1.7.3",
-      "depth": 0,
+      "version": "1.7.4",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.director": "1.0.0",
