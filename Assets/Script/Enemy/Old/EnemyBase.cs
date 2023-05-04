@@ -18,6 +18,7 @@ public class EnemyBase : MonoBehaviour, IHurt
         }
 
     }
+
     private void Start()
     {
         player = DataManager.Instance.miner.gameObject;

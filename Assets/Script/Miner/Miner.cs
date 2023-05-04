@@ -141,6 +141,12 @@ public class Miner : MonoBehaviour, IHurt
             rb2d.velocity = Vector2.zero;
             tmp.HitBack(forceWhenTouchEnemy,transform,true);
         }
+        EnemyData test;
+        if (collision.gameObject.TryGetComponent<EnemyData>(out test))
+        {
+            rb2d.velocity = Vector2.zero;
+            test.HitBack(forceWhenTouchEnemy, transform, true);
+        }
     }
 
     public void GetDamaged(float damage)

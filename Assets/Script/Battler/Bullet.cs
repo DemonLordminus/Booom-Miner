@@ -21,11 +21,21 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         EnemyBase target;
+        EnemyData test;
         if(collision.gameObject.TryGetComponent<EnemyBase>(out target))
         {
             target.HitBack(bulletForce,transform);
             target.GetDamaged(damage);
             if(!isCanGetOverEnemy)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if (collision.gameObject.TryGetComponent<EnemyData>(out test))
+        {
+            test.HitBack(bulletForce, transform);
+            test.GetDamaged(damage);
+            if (!isCanGetOverEnemy)
             {
                 Destroy(gameObject);
             }
